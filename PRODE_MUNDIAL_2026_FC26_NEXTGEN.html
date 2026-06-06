@@ -162,7 +162,7 @@ background:linear-gradient(90deg,var(--fc-gold),#fff09a)!important;
 }
 </style>
 
-<h2 class="sr-only">Tablero Prode Mundial 2026 estilo FC26 con fixture completo, puntuación automática y fases dinámicas</h2>
+<h2 class="sr-only">Tablero de jeugo para Mundial 2026</h2>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -273,6 +273,9 @@ select{background:var(--fc-card);border:1px solid var(--fc-border);border-radius
     <div class="hdr-logo">⚽ Prode Mundial 2026</div>
     <div class="hdr-sub" id="hdr-sub">11 Jun – 19 Jul · 104 partidos · 12 grupos</div>
   </div>
+  <button class="fc-btn-del" style="margin-left: auto; padding: 8px 12px; font-weight: bold;" onclick="resetResultados()">
+    🔄 Reiniciar Resultados
+  </button>
 </div>
 
 <div class="tabs">
@@ -618,7 +621,20 @@ function goTab(name){
   else if(name==='elim') renderElim();
   else if(name==='rules') renderRules();
 }
-
+// --- NUEVA FUNCIÓN PARA REINICIAR RESULTADOS ---
+function resetResultados() {
+  if (confirm('¿Estás seguro de que quieres borrar todos los marcadores finales cargados? La tabla volverá a cero.')) {
+    // Limpiar los resultados de la Fase de Grupos
+    Object.values(S.gM).forEach(m => { m.g1 = ''; m.g2 = ''; });
+    // Limpiar los resultados de las Eliminatorias
+    Object.values(S.eM).forEach(m => { m.g1 = ''; m.g2 = ''; });
+    
+    // Guardar los cambios y recargar la página para actualizar la vista
+    save();
+    location.reload();
+  }
+}
+// -----------------------------------------------
 load(); initM();
 renderRanking(); renderPlayers(); renderGrupos(); renderElim(); renderRules();
 </script>
