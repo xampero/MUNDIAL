@@ -162,7 +162,7 @@ background:linear-gradient(90deg,var(--fc-gold),#fff09a)!important;
 }
 </style>
 
-<h2 class="sr-only">Tablero de jeugo para Mundial 2026</h2>
+<h2 class="sr-only">Tablero de juego para Mundial 2026</h2>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -270,7 +270,7 @@ select{background:var(--fc-card);border:1px solid var(--fc-border);border-radius
 
 <div class="hdr">
   <div>
-    <div class="hdr-logo">⚽ Prode Mundial 2026</div>
+    <div class="hdr-logo">⚽ SUPER Mundial 2026</div>
     <div class="hdr-sub" id="hdr-sub">11 Jun – 19 Jul · 104 partidos · 12 grupos</div>
   </div>
   <button class="fc-btn-del" style="margin-left: auto; padding: 8px 12px; font-weight: bold;" onclick="resetResultados()">
@@ -572,7 +572,7 @@ function genWSP(){
   if(!S.players.length){out.style.display='none';cbtn.style.display='none';return;}
   const list=S.players.map(p=>({name:p,...stats(p)})).sort((a,b)=>b.p-a.p);
   const medals=['🥇','🥈','🥉'];
-  let msg='🏆 *PRODE MUNDIAL 2026*\n📊 Tabla actualizada\n\n';
+  let msg='🏆 *JUEGO MUNDIAL 2026 - EL EMPERADOR*\n📊 Tabla actualizada\n\n';
   list.forEach((s,i)=>{msg+=`${medals[i]||`${i+1}.`} *${s.name}* — ${s.p} pts (${s.ex} exactos)\n`;});
   const total=Object.values({...S.gM,...S.eM}).filter(m=>m.g1!=='').length;
   msg+=`\n⚽ Partidos jugados: ${total}/104\n_5pts exacto · 3pts misma diferencia · 1pt ganador_\n_¡Manden sus predicciones antes del pitazo!_`;
@@ -650,7 +650,7 @@ hero.innerHTML=`
 background:linear-gradient(135deg,rgba(0,229,255,.12),rgba(124,92,255,.16));
 border:1px solid rgba(255,255,255,.08);
 box-shadow:0 15px 40px rgba(0,0,0,.35)">
-<div style="font-size:12px;color:#00e5ff;font-weight:800;letter-spacing:2px">ULTIMATE PRODE EXPERIENCE</div>
+<div style="font-size:12px;color:#00e5ff;font-weight:800;letter-spacing:2px">JUEGO APUESTAS MUNDIAL</div>
 <div style="font-size:32px;font-weight:800;color:white;margin-top:6px">🏆 Mundial 2026 Fantasy Challenge</div>
 <div style="color:#9fb4d3;margin-top:8px">Compite con tus amigos, predice resultados y conquista la tabla de posiciones.</div>
 </div>`;
