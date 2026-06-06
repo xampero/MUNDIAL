@@ -901,11 +901,11 @@ function renderDashboard(){
     <div class="sec-title" style="font-size:16px">Configurar aporte por persona</div>
     <div style="font-size:12px;color:var(--muted);margin-bottom:10px">El pozo se calcula automáticamente: aporte × cantidad de jugadores.</div>
     <div class="aporte-row">
-      <span class="aporte-chip" onclick="setMontoRapido(50)">$50</span>
-      <span class="aporte-chip" onclick="setMontoRapido(100)">$100</span>
-      <span class="aporte-chip" onclick="setMontoRapido(200)">$200</span>
-      <span class="aporte-chip" onclick="setMontoRapido(500)">$500</span>
-      <span class="aporte-chip" onclick="setMontoRapido(1000)">$1.000</span>
+      <span class="aporte-chip" onclick="setMontoRapido(50)">Bs50</span>
+      <span class="aporte-chip" onclick="setMontoRapido(100)">Bs100</span>
+      <span class="aporte-chip" onclick="setMontoRapido(200)">Bs200</span>
+      <span class="aporte-chip" onclick="setMontoRapido(500)">Bs500</span>
+      <span class="aporte-chip" onclick="setMontoRapido(1000)">Bs1.000</span>
     </div>
     <div class="pozo-config">
       <input type="number" id="inp-aporte" placeholder="Aporte por persona..." min="0" value="${S.pozo.aporte||''}">
