@@ -531,7 +531,7 @@ select{
 <!-- HEADER -->
 <div class="hdr">
   <div>
-    <div class="hdr-logo">⚽ Prode Mundial 2026</div>
+    <div class="hdr-logo">⚽ Super Mundial 2026 - El Emperador</div>
     <div class="hdr-sub" id="hdr-sub">11 Jun – 19 Jul · 104 partidos · 12 grupos</div>
   </div>
   <div class="hdr-right">
@@ -566,7 +566,7 @@ select{
     <div class="cert-corner bl"></div>
     <div class="cert-corner br"></div>
     <button class="cert-close" onclick="closeCert()">✕</button>
-    <div class="cert-logo">PRODE MUNDIAL 2026</div>
+    <div class="cert-logo">SUPER MUNDIAL 2026</div>
     <div class="cert-title">✦ CERTIFICADO DE HONOR ✦</div>
     <div class="cert-emoji" id="certEmoji">🏆</div>
     <div class="cert-award" id="certAward">PREMIO</div>
@@ -1198,7 +1198,7 @@ function genWSP(){
   const list=S.players.map(p=>({name:p,...stats(p)})).sort((a,b)=>b.p-a.p);
   const pozo=calcPozo();
   const medals=['🥇','🥈','🥉'];
-  let msg='🏆 *PRODE MUNDIAL 2026*\n📊 Tabla actualizada\n\n';
+  let msg='🏆 *SUPER MUNDIAL 2026*\n📊 Tabla actualizada\n\n';
   list.forEach((s,i)=>{msg+=`${medals[i]||`${i+1}.`} *${s.name}* — ${s.p} pts (${s.ex} exactos)\n`;});
   if(pozo.total>0) msg+=`\n💰 Pozo: $${pozo.total.toLocaleString()} · 1ro: $${pozo.p1.toLocaleString()} · 2do: $${pozo.p2.toLocaleString()} · 3ro: $${pozo.p3.toLocaleString()}`;
   const total=Object.values({...S.gM,...S.eM}).filter(m=>m.g1!=='').length;
