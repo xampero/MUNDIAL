@@ -1049,8 +1049,8 @@ function renderRules(){
   <div class="rules-card" style="font-size:12px;color:var(--text);line-height:1.8">
     🔒 Antes de que se juegue un partido, solo ves si alguien ya cargó su predicción (<span style="color:var(--green)">✓ listo</span>) pero no el marcador exacto.<br>
     🏁 Una vez cargado el resultado, se revelan todas las predicciones con su puntaje.<br>
-    ✏️ Solo podés editar tus propias predicciones.<br>
-    👑 Solo el admin puede cargar resultados y configurar el pozo.
+    ✏️ Solo puedes editar tus propias predicciones.<br>
+    👑 Solo el EMPERADOR puede cargar resultados y configurar el pozo.
   </div>
   <div class="sec-title">Compartir por WhatsApp</div>
   <button class="btn" onclick="genWSP()">📲 Generar tabla para WhatsApp</button>
@@ -1066,7 +1066,7 @@ function genWSP(){
   const list=(window.S.players||[]).map(p=>({name:p,...statsV2(p)})).sort((a,b)=>b.p-a.p);
   const pozo=calcPozo();
   const medals=['🥇','🥈','🥉'];
-  let msg='🏆 *PRODE MUNDIAL 2026*\n📊 Tabla actualizada\n\n';
+  let msg='🏆 *JUEGO MUNDIAL 2026*\n📊 Tabla actualizada\n\n';
   list.forEach((s,i)=>{msg+=`${medals[i]||`${i+1}.`} *${s.name}* — ${s.p} pts (${s.ex} exactos)\n`;});
   if(pozo.total>0) msg+=`\n💰 Pozo: $${pozo.total.toLocaleString()} · 1ro: $${pozo.p1.toLocaleString()} · 2do: $${pozo.p2.toLocaleString()} · 3ro: $${pozo.p3.toLocaleString()}`;
   const played=Object.values({...(window.S.gM||{}),...(window.S.eM||{})}).filter(m=>m.g1!=='').length;
