@@ -773,9 +773,9 @@ function renderDashboard(){
     <div><span class="pozo-amount">${pozo.total>0?'$'+pozo.total.toLocaleString():'—'}</span></div>
     ${(window.S.players||[]).length>0?`<div style="font-size:11px;color:var(--muted);margin-top:6px">${(window.S.players||[]).length} participantes${(window.S.pozo||{}).aporte>0?' · $'+(window.S.pozo.aporte).toLocaleString()+' por persona':''}</div>`:''}
     <div class="prize-splits">
-      <div class="prize-split p1"><div class="split-medal">🥇</div><div class="split-pct">50%</div><div class="split-amt">Bs{pozo.p1>0?'$'+pozo.p1.toLocaleString():'—'}</div><div class="split-lbl">1er Lugar</div>${list[0]?`<div style="font-size:11px;font-weight:700;color:var(--text);margin-top:4px">${list[0].name}</div>`:''}</div>
-      <div class="prize-split p2"><div class="split-medal">🥈</div><div class="split-pct">30%</div><div class="split-amt">Bs{pozo.p2>0?'$'+pozo.p2.toLocaleString():'—'}</div><div class="split-lbl">2do Lugar</div>${list[1]?`<div style="font-size:11px;font-weight:700;color:var(--text);margin-top:4px">${list[1].name}</div>`:''}</div>
-      <div class="prize-split p3"><div class="split-medal">🥉</div><div class="split-pct">20%</div><div class="split-amt">Bs{pozo.p3>0?'$'+pozo.p3.toLocaleString():'—'}</div><div class="split-lbl">3er Lugar</div>${list[2]?`<div style="font-size:11px;font-weight:700;color:var(--text);margin-top:4px">${list[2].name}</div>`:''}</div>
+      <div class="prize-split p1"><div class="split-medal">🥇</div><div class="split-pct">50%</div><div class="split-amt">${pozo.p1>0?'$'+pozo.p1.toLocaleString():'—'}</div><div class="split-lbl">1er Lugar</div>${list[0]?`<div style="font-size:11px;font-weight:700;color:var(--text);margin-top:4px">${list[0].name}</div>`:''}</div>
+      <div class="prize-split p2"><div class="split-medal">🥈</div><div class="split-pct">30%</div><div class="split-amt">${pozo.p2>0?'$'+pozo.p2.toLocaleString():'—'}</div><div class="split-lbl">2do Lugar</div>${list[1]?`<div style="font-size:11px;font-weight:700;color:var(--text);margin-top:4px">${list[1].name}</div>`:''}</div>
+      <div class="prize-split p3"><div class="split-medal">🥉</div><div class="split-pct">20%</div><div class="split-amt">${pozo.p3>0?'$'+pozo.p3.toLocaleString():'—'}</div><div class="split-lbl">3er Lugar</div>${list[2]?`<div style="font-size:11px;font-weight:700;color:var(--text);margin-top:4px">${list[2].name}</div>`:''}</div>
     </div>
   </div>`;
   if(isAdm){
