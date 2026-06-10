@@ -17,7 +17,7 @@
 }
 html{scroll-behavior:smooth}
 body{font-family:'DM Sans',sans-serif;background:
-  linear-gradient(135deg,#13051f 0%,#2a0d3d 42%,#f6f4f8 42%,#f6f4f8 43%,#21102f 43%,#0f0717 100%);
+  linear-gradient(135deg,#13051f 0%,#2a0d3d 42%,#f6f4f8 42%,#f6f4f8 43%,#21102f 43%,#0f0717 50%);
   color:var(--text);font-size:14px;min-height:100vh;overflow-x:hidden;}
 body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
   background:
@@ -755,7 +755,7 @@ function renderRanking(){
     <div class="kpi kpi-green"><div class="kpi-num" style="color:var(--green)">${totalExact}</div><div class="kpi-lbl">Exactos totales</div><div class="kpi-sub">entre todos</div></div>
     <div class="kpi kpi-neon"><div class="kpi-num" style="color:#fff">${played}</div><div class="kpi-lbl">Partidos jugados</div><div class="kpi-sub">de 104 totales</div></div>
     <div class="kpi kpi-purple"><div class="kpi-num" style="color:var(--purple2)">${(window.S.players||[]).length}</div><div class="kpi-lbl">Participantes</div><div class="kpi-sub">${totalPreds} predicciones reveladas</div></div>
-    <div class="kpi kpi-gold"><div class="kpi-num" style="color:var(--gold)">${pozo.total>0?'$'+pozo.total.toLocaleString():'—'}</div><div class="kpi-lbl">Pozo total</div><div class="kpi-sub">${pozo.total>0?'1ro: $'+pozo.p1.toLocaleString():'Sin monto'}</div></div>
+    <div class="kpi kpi-gold"><div class="kpi-num" style="color:var(--gold)">${pozo.total>0?'Bs'+pozo.total.toLocaleString():'—'}</div><div class="kpi-lbl">Pozo total</div><div class="kpi-sub">${pozo.total>0?'1ro: Bs'+pozo.p1.toLocaleString():'Sin monto'}</div></div>
     <div class="kpi kpi-red"><div class="kpi-num" style="color:var(--red)">${list[list.length-1]?.name?.split(' ')[0]||'—'}</div><div class="kpi-lbl">Zona remontada</div><div class="kpi-sub">${list[list.length-1]?.p||0} puntos</div></div>
   </div>
   <div class="sec-title">🏆 Podio</div>
@@ -797,7 +797,7 @@ function renderDashboard(){
   let h=`<div style="padding-top:4px"><div class="sec-title">🏦 Pozo del Torneo</div>
   <div class="pozo-hero">
     <div class="pozo-title">POZO TOTAL ACUMULADO</div>
-    <div><span class="pozo-amount">${pozo.total>0?'$'+pozo.total.toLocaleString():'—'}</span></div>
+    <div><span class="pozo-amount">${pozo.total>0?'Bs'+pozo.total.toLocaleString():'—'}</span></div>
     ${(window.S.players||[]).length>0?`<div style="font-size:11px;color:var(--muted);margin-top:6px">${(window.S.players||[]).length} participantes${(window.S.pozo||{}).aporte>0?' · $'+(window.S.pozo.aporte).toLocaleString()+' por persona':''}</div>`:''}
     <div class="prize-splits">
       <div class="prize-split p1"><div class="split-medal">🥇</div><div class="split-pct">50%</div><div class="split-amt">${pozo.p1>0?'$'+pozo.p1.toLocaleString():'—'}</div><div class="split-lbl">1er Lugar</div>${list[0]?`<div style="font-size:11px;font-weight:700;color:var(--text);margin-top:4px">${list[0].name}</div>`:''}</div>
@@ -1076,7 +1076,7 @@ function renderRules(){
   <div class="rules-card" style="font-size:12px;color:var(--text);line-height:1.8">
     🔒 Antes de que se juegue un partido, solo ves si alguien ya cargó su predicción (<span style="color:var(--green)">✓ listo</span>) pero no el marcador exacto.<br>
     🏁 Una vez cargado el resultado, se revelan todas las predicciones con su puntaje.<br>
-    ✏️ Solo puedes editar tus propias predicciones.<br>
+    ✏️ Solo puedes editar tus propias predicciones, debes hacerlo hasta una hora antes de que empiece el primer partido del dia.<br>
     👑 Solo el administrador puede cargar resultados y configurar el pozo.
   </div>
   <div class="sec-title">Compartir por WhatsApp</div>
