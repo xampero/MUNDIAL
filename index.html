@@ -736,7 +736,7 @@ function renderRanking(){
   <div class="podium">`;
   list.slice(0,3).forEach((s,i)=>{
     const pct=Math.round((s.p/max)*100);
-    const prize=prizeAmts[i]>0?`<div class="pod-prize">$${prizeAmts[i].toLocaleString()}</div>`:'';
+    const prize=prizeAmts[i]>0?`<div class="pod-prize">Bs${prizeAmts[i].toLocaleString()}</div>`:'';
     h+=`<div class="pod-card ${podStyles[i]||''}">
       <div class="pod-medal">${medals[i]||'🏅'}</div>
       <div class="pod-name">${s.name}</div>
