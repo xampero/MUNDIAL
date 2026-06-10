@@ -754,7 +754,7 @@ function renderRanking(){
   list.forEach((s,i)=>{
     const pct=Math.round((s.p/max)*100);
     const posClass=i===0?'pos-1':i===1?'pos-2':i===2?'pos-3':'';
-    const prize=prizeAmts[i]>0?`<span class="tag tag-gold" style="margin-left:5px">$${prizeAmts[i].toLocaleString()}</span>`:'';
+    const prize=prizeAmts[i]>0?`<span class="tag tag-gold" style="margin-left:5px">Bs${prizeAmts[i].toLocaleString()}</span>`:'';
     h+=`<tr><td><span class="pos-b ${posClass}">${i+1}</span></td><td style="font-weight:700">${s.name}${prize}</td><td style="text-align:right;font-family:'Bebas Neue',cursive;font-size:18px;color:var(--gold2)">${s.p}</td><td style="text-align:right;color:var(--green)">${s.ex} 🎯</td><td style="text-align:right;color:var(--muted)">${s.w}</td><td style="text-align:right;color:${s.consec>=3?'var(--red)':'var(--muted)'}">${s.consec>=3?'🔥':''} ${s.consec}</td><td style="text-align:right;color:var(--muted)">${s.pct}%</td><td style="min-width:70px"><div class="bar-w"><div class="bar-f ${i===0?'bar-gold':''}" style="width:${pct}%"></div></div></td></tr>`;
   });
   h+='</tbody></table></div>';
