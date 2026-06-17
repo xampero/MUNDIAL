@@ -1156,7 +1156,7 @@ function matchCard(id,m,isElim){
     h+='<div class="pred-grid">';
     (window.S.players||[]).forEach(p=>{
       const pred=((window.PREDS||{})[p]||{})[id];
-      const isMe=p===window.myName;
+      const =p===window.myName;
       let badge='',col='var(--muted)';
       if(done&&pred){
         const v=pts(id, pred, m.g1, m.g2);   // ← pasamos id
@@ -1175,7 +1175,7 @@ function matchCard(id,m,isElim){
       } else if(locked){
         // Partido en curso → mostrar predicción de cada uno (ya no se puede editar)
         if(pred)
-          h+=`<div class="pred-val" style="color:var(--gold)">🔒 ${isMe?(pred.g1+'–'+pred.g2):'✓'}</div>`;
+          h+=`<div class="pred-val" style="color:var(--gold)">🔒 ${pred.g1}–${pred.g2}</div>`;
         else
           h+=`<div class="pred-val" style="color:rgba(106,138,173,.3)">— cerrado</div>`;
       } else if(!pend && isMe){
