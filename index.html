@@ -1187,7 +1187,7 @@ function matchCard(id,m,isElim){
       } else if(locked){
         // Partido en curso → mostrar predicción de cada uno (ya no se puede editar)
         if(pred)
-          h+=`<div class="pred-val" style="color:var(--gold)">🔒 ${isMe?(pred.g1+'–'+pred.g2):'✓'}</div>`;
+          h+=`<div class="pred-val" style="color:var(--gold)">🔒 $${pred.g1}–${pred.g2}</div>`;
         else
           h+=`<div class="pred-val" style="color:rgba(106,138,173,.3)">— cerrado</div>`;
       } else if(!pend && isMe){
